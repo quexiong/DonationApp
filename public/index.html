@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Sunshine Fund is the simple and effective application that allows family and friends to make 'sunshine money/nyiaj tshav ntuj' contributions to the family of the deceased to help cover funeral costs.">
+
+	<title>Sunshine Fund</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/grid.css">
+	<link rel="stylesheet" type="text/css" href="./css/one.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+	<header role="banner">
+		<section role="region" id="nav-bar-region">
+			<div class="nav-bar-container">
+				<div class="row">
+					<div class="navbar-custom col-6" id="home-info">
+						<span class="app-name"><a href="#">Sunshine Fund</a></span>
+					</div>
+					<div class="navbar-custom col-6" id="nav-user">
+						<span class="nav-items">Welcome, <span class="user-name"></span></span>
+						<span>|</span>
+						<span class="nav-items" id="logout-button"><i class="fas fa-sign-out-alt"></i><a href="#"> Logout</a></span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section role="region" id="applicationTitle">
+			<div class="home-banner-container">
+				<h1 id="app-title">Sunshine Fund</h1>
+			</div>
+		</section>
+	</header>
+
+	<main role="main">
+		<div class="home-container">
+			<section role="region" id="login-region">
+				<div id="login-instructions">
+					<h4>Welcome back, login to your account!</h4> 
+				</div>
+				<div class="login-container row">
+					<div class="col-3"><p class="test"> </p></div>
+					<div>
+						<div class="login-form-container col-6">
+							<form class="login-form">
+								<div class="login-error-container"></div>
+								<div class="username-container">
+								  	<div class="form-group row">
+								    	<label for="username" class="col-sm-12 col-form-label">Username</label>
+								  	</div>
+								  	<div class="form-group row">
+								    	<div class="col-sm-12">
+								      		<input type="text" class="form-control" id="input-Username-Login" placeholder="Username" required="Enter your username">
+								    	</div>
+								  	</div>
+							  	</div>
+							  	<div class="password-container">
+								  	<div class="form-group row">
+								    	<label for="password" class="col-sm-12 col-form-label">Password</label>
+								  	</div>
+								  	<div class="form-group row">
+								    	<div class="col-sm-12">
+								      		<input type="password" class="form-control" id="input-Password-Login" placeholder="Password" required="Enter your password">
+								    	</div>
+								  	</div>
+							  	</div>
+							  	<div class="submitButton-container">
+							    	<div class="col-sm-12">
+							      		<button type="submit" class="btn btn-primary" id="login-button">Login</button>
+							    	</div>
+						  		</div>
+							</form>
+						</div>	
+					</div>
+					<div class="col-3"><p class="test"> </p></div>
+				</div>
+			</section>
+			<section role="region" id="signup-region">
+				<div id="signUp-instructions">
+					<h4>Don't have an account yet? Create a new account for free!</h4> 
+				</div>
+				<div class="sign-up-container row">
+					<div class="col-3"><p class="test"> </p></div>
+					<div class="sign-up-form-container col-6">
+						<form class="signup-form">
+							<div class="signup-error-container"></div>
+							<div class="firstName-container">
+								<div class="form-group row">
+							    	<label for="inputFirstName" class="col-sm-12 col-form-label">First Name</label>
+							  	</div>
+								<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		<input type="firstName" class="form-control" id="input-FirstName" placeholder="First Name">
+							    	</div>
+							  	</div>
+							</div>
+						  	<div class="lastName-container">
+							  	<div class="form-group row">
+							    	<label for="inputLastName" class="col-sm-12 col-form-label">Last Name</label>
+							  	</div>
+							  	<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		<input type="firstName" class="form-control" id="input-LastName" placeholder="Last Name">
+							    	</div>
+							  	</div>
+						  	</div>
+						  	<div class="email-container">
+							  	<div class="form-group row">
+							    	<label for="username" class="col-sm-12 col-form-label">Username</label>
+							  	</div>
+							  	<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		<input type="text" class="form-control" id="input-Username-SignUp" placeholder="Username">
+							    	</div>
+							  	</div>
+						  	</div>
+						  	<div class="password-container">
+							  	<div class="form-group row">
+							    	<label for="password" class="col-sm-12 col-form-label">Password</label>
+							  	</div>
+							  	<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		<input type="password" class="form-control" id="input-Password-SignUp" placeholder="Password">
+							    	</div>
+							  	</div>
+						  	</div>
+						  	<div class="confirmPassword-container">
+							  	<div class="form-group row">
+							    	<label for="confirmPassword" class="col-sm-12 col-form-label">Confirm Password</label>
+							  	</div>
+							  	<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		<input type="password" class="form-control" id="confirm-input-Password" placeholder="Password">
+							    	</div>
+							  	</div>
+						  	</div>
+						  	<div class="submitButton-container">
+							    <div class="col-sm-12">
+							      	<button type="submit" class="btn btn-primary" id="signup-button">Sign up</button>
+							    </div>
+						  	</div>
+						</form>
+					</div>
+					<div class="col-3"><p class="test"> </p></div>
+				</div>
+			</section>
+		</div>
+		
+		<!-- <div class="name-event-container">
+			<section role="region" id="dashboard-region">
+				<section role="region" id="name-event-display">
+					<div class="name-event-container col-12">
+						<h2>Create a name for this event</h2>
+						<form class="name-event-form">
+							<div class="event-container">
+								<div class="form-group row">
+							    	<label for="event-name" class="col-sm-12 col-form-label">Event Name</label>
+							  	</div>
+							  	<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		<input type="text" class="form-control" id="input-event-name" placeholder="Event Name">
+								    </div>
+							  	</div>
+						  	</div>
+						  
+						  	<div class="event-buttons">
+								<button class="btn" id="add-to-event"><i class="fas fa-plus-square"></i> Create Event Name</button>
+							</div>
+						</form>
+					</div>
+				</section>
+			</section>
+		</div> -->
+			
+		<div class="contributions-container">
+			<section role="region" id="cotributions-region">
+				<section role="region" id="contribution-display">
+					<div class="contribution-list-container col-12">
+						<h2>Current Donations For: <span class="user-event"></span></h2>
+						<ul class="contributions-list">
+							<!-- prepend contribution items here -->
+						</ul>
+					</div>
+				</section>
+
+				<section role="region" id="name-event-display">
+					<div class="name-event-container col-12">
+						<h2>Create a name for this event</h2>
+						<form class="name-event-form">
+							<div class="event-container">
+								<div class="form-group row">
+							    	<label for="event-name" class="col-sm-12 col-form-label">Event Name</label>
+							  	</div>
+							  	<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		<input type="text" class="form-control" id="input-event-name" placeholder="Event Name">
+								    </div>
+							  	</div>
+						  	</div>
+						  
+						  	<div class="event-buttons">
+								<button class="btn" id="add-to-event"><i class="fas fa-plus-square"></i> Create Event Name</button>
+							</div>
+						</form>
+					</div>
+				</section>
+
+				<section role="region" id="contribution-form-display">
+					<div class="contribution-form-container col-12">
+						<h2>Make a Donation</h2>
+						<form class="donation-form">
+							<div class="donor-container">
+								<div class="form-group row">
+							    	<label for="donor" class="col-sm-12 col-form-label">Donor Name</label>
+							  	</div>
+							  	<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		<input type="text" class="form-control" id="input-donor" placeholder="Donor Name">
+								    </div>
+							  	</div>
+						  	</div>
+						  	<div class="donation-amount-container">
+								<div class="form-group row">
+							    	<label for="donation-amount" class="col-sm-12 col-form-label">Donation Amount</label>
+							  	</div>
+							  	<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		<input type="number" class="form-control" id="input-donation-amount" placeholder="100.00">
+								    </div>
+							  	</div>
+						  	</div>
+						  	<div class="donation-message-container">
+								<div class="form-group row">
+							    	<label for="donation-message" class="col-sm-12 col-form-label">Message</label>
+							  	</div>
+							  	<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		  <textarea class="donation-message-text" id="input-donation-message" name="message" rows="10" cols="30" placeholder="Leave a message with your donation"></textarea>
+								    </div>
+							  	</div>
+						  	</div>
+						  	<div class="donation-contact-container">
+								<div class="form-group row">
+							    	<label for="donation-contact" class="col-sm-12 col-form-label">Contact Info</label>
+							  	</div>
+							  	<div class="form-group row">
+							    	<div class="col-sm-12">
+							      		<input type="text" class="form-control" id="input-contact-info" placeholder="Phone Number or Email">
+								    </div>
+							  	</div>
+						  	</div>
+						  	<div class="event-buttons">
+								<button class="btn" id="add-to-donations-list"><i class="fas fa-plus-square"></i> ADD DONATION</button>
+								<button class="btn" id="cancel-add-donation"><i class="fas fa-times-circle"></i> CANCEL</button>
+							</div>
+						</form>
+					</div>
+				</section>
+
+				<section role="region" id="create-contribution">
+					<div class="create-contribution-container col-12">
+						<div class="row">
+							<!-- when button is clicked, then change text to ADD TO DONATION LIST -->
+							<!-- when button is clicked again, after adding donation to list, then change text back to RECORD DONATION -->
+							<div class="col-12" id="create-icon-container">
+								<button class="btn btn-create" id="record-donation-button"><i class="fas fa-plus-square"> RECORD DONATION</i></button>
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+	</main>
+
+	<div class="footer-container">
+		<section role="region" id="creatorinfo">
+			<footer role="contentinfo">
+	        	<div class="row">
+	          		<div class="copyright col-4">
+	            		<p>Xiong Projects © 2018</p>
+	          		</div>
+	          		<div class="connectMe col-4">
+	            		<a target="_blank" href="https://www.linkedin.com/in/quentinxiong/">
+	              		<img class="connect" src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-256.png" alt="LinkedIn logo">
+	            		</a> 
+	            		<a target="_blank" href="https://github.com/quexiong">
+	              		<img class="connect" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-256.png" alt="GitHub logo">
+	            		</a> 
+	          		</div>
+	          		<div class="creator col-4">
+	            		<p>Created by Quentin Xiong</p>
+	          		</div>
+	        	</div>
+	      	</footer>
+	    </section>
+	</div>
+
+	<script type="text/javascript" src="./javascript/helpers.js"></script>
+	<script type="text/javascript" src="./javascript/index.js"></script>
+</body>
+</html>

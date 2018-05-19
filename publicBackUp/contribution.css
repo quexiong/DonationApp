@@ -1,0 +1,223 @@
+html {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	height: 100%;
+	text-align: center;
+}
+
+header {
+	width: 100%;
+	background-color: grey;
+}
+
+.navbar-custom {
+	padding: 6px 6px;
+	background-color: grey;
+}
+
+#home-info {
+	text-align: left;
+}
+
+#nav-user, .dropdown{
+	text-align: right;
+}
+
+.row {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+span {
+	font-size: 24px;
+}
+
+.app-name {
+	font-size: 24px;
+}
+
+.nav-items {
+	font-size: 24px;
+}
+
+ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.create-contribution-container {
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.contribution-list-container {
+	display: block;
+	border: 2px solid black;
+	margin-top: 10px;
+	margin-bottom: 100px;
+}
+
+.contribution-item {
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 12px 2px;
+	width: 80%;
+	margin: 10px auto;
+
+}
+
+.contributions-list {
+	padding: 2px 2px;
+	margin-top: 2px;
+}
+
+.contribution-details-container {
+	text-align: left;
+}
+
+.contribution-details-info {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.contribution-buttons {
+	text-align: center;
+}
+
+#create-contribution-icon {
+	font-size: 60px;
+}
+
+#delete-contribution-icon {
+	font-size: 30px;
+	margin: 2px 2px;
+	padding: 4px 4px;
+}
+
+/*.btn override*/
+.btn {
+	width: 25%;
+	font-size: 12px;
+	margin: 4px 4px;
+	border: none;
+  	background: transparent;
+  	border: 2px solid black;
+  	color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.btn-create {
+	width: 40%;
+	font-size: 20px;
+	margin: 12px 12px;
+	color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.contribution-form-container {
+	display: none;
+	border: 2px solid black;
+	margin-top: 10px;
+	margin-bottom: 100px;
+}
+
+.donation-form {
+	border: 2px solid black;
+	padding: 12px 10px;
+	border-radius: 4px;
+	width: 60%;
+	margin: 10px auto;
+}
+
+.donation-message-text {
+	width: 100%;
+	border-radius: 4px;
+	height: 100px;
+}
+
+/*bootstrap overrides*/
+.form-group {
+	text-align: left;
+}
+
+/*MEDIA QUERY FOR MOBILE*/
+@media screen and (max-width: 540px) {
+	.btn {
+		font-size: 12px;
+		width: 45%;
+	}
+
+	#create-contribution-icon {
+		font-size: 50px;
+	}
+
+	.contribution-list-container {
+		display: block;
+		border: 2px solid black;
+		margin-top: 10px;
+		margin-bottom: 120px;
+	}
+
+	.contribution-delete {
+		text-align: center;
+	}
+
+	#home-info {
+		text-align: center;
+	}
+
+	#nav-user, .dropdown{
+		text-align: center;
+	}
+
+	h4 {
+		font-size: 14px;
+		margin-top: 0;
+		margin-bottom: 4px;
+	}
+
+	.btn-create {
+		width: 75%;
+		height: 75;
+		font-size: 14px;
+	}
+
+}
+
+/*MEDIA QUERY FOR IPAD - 768X1024 PX*/
+@media screen and (max-width: 768px) {
+	.contribution-delete {
+		text-align: center;
+	}
+}
+
+/*MEDIA QUERY FOR IPAD - 1024X1366 PX*/
+@media screen and (max-width: 1024px) {
+
+	/*.app-name {
+		font-size: 20px;
+	}*/
+
+	.nav-items {
+		font-size: 20px;
+	}
+}
