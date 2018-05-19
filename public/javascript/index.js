@@ -1,7 +1,7 @@
 'use strict';
 // API END POINTS
 const SUNSHINE_USERS_URL = '/users';
-const SUNSHINE_CONTRIBUTIONS_URL = '/contributions';
+const SUNSHINE_DONATIONS_URL = '/donations';
 
 let username = '';
 let user_id = '';
@@ -20,9 +20,9 @@ const getUserID = (username) => {
 	});
 };
 
-const postContributionToDB = (userID, donor, donation, message, contact) => {
+const postDonationToDB = (userID, donor, donation, message, contact) => {
 	$.ajax({
-		url: SUNSHINE_CONTRIBUTIONS_URL,
+		url: SUNSHINE_DONATIONS_URL,
 		type: 'POST',
 		dataType: 'json',
 		contentType: 'application/json',
@@ -39,16 +39,16 @@ const postContributionToDB = (userID, donor, donation, message, contact) => {
 			getUserID(username);
 		}
 	})
-	renderContributions(userID);
+	renderDonations(userID);
 }
 
 //#################################################################################################
 
 //################################### DYNAMIC/RENDER functions ####################################
-const renderContributions = (user_id) => {
+const renderDonations = (user_id) => {
 	// console.log('this is the saved value of user id' + userID);
 	$.ajax({
-		url: SUNSHINE_CONTRIBUTIONS_URL + '/' + user_id,
+		url: SUNSHINE_DONATIONS_URL + '/' + user_id,
 		type: 'GET',
 		dataType: 'json',
 		contentType: 'application/json',
@@ -94,9 +94,6 @@ const loginSubmit = () => {
 		};
 		
 		login(username, userPassword);
-		// getUserID(username);
-		// console.log('getting id to pass into contribution creation');
-		// user_id = getUserID(username);
 	});
 };
 
@@ -158,13 +155,13 @@ const signUpSubmit = () => {
 // #############################################################################################
 
 
-// ########################handles CONTRIBUTION functions###################################
+// ########################handles DONATION functions###################################
 const addEventName = () => {
 	$('#add-to-event').on('click', function(event) {
 		event.preventDefault();
 		console.log('adding name');
 		conceal('.name-event-container');
-		reveal('.create-contribution-container');
+		reveal('.create-donation-container');
 		let eventName = $('#input-event-name').val();
 		console.log(eventName);
 		$('.user-event').append('<h2>' + eventName + '</h2');
@@ -176,9 +173,9 @@ const recordDonations = () => {
 	$('#record-donation-button').on('click', function(event) {
 		event.preventDefault();
 		console.log('going to record donations now');
-		conceal('.contribution-list-container');
-		conceal('.create-contribution-container');
-		reveal('.contribution-form-container');
+		conceal('.donation-list-container');
+		conceal('.create-donation-container');
+		reveal('.donation-form-container');
 	});
 };
 
@@ -186,9 +183,9 @@ const addDonationToList = () => {
 	$('#add-to-donations-list').on('click', function(event) {
 		event.preventDefault();
 		console.log('adding donation to the list of donations');
-		reveal('.contribution-list-container');
-		reveal('.create-contribution-container');
-		conceal('.contribution-form-container');
+		reveal('.donation-list-container');
+		reveal('.create-donation-container');
+		conceal('.donation-form-container');
 
 		// Capture the values from the form to send to the server
 		let donorName = $('#input-donor').val(),
@@ -214,15 +211,15 @@ const cancelAddDonation = () => {
 	$('#cancel-add-donation').on('click', function(event) {
 		event.preventDefault();
 		console.log('canceling donation and returning to donation list page');
-		reveal('.contribution-list-container');
-		reveal('.create-contribution-container');
-		conceal('.contribution-form-container');
+		reveal('.donation-list-container');
+		reveal('.create-donation-container');
+		conceal('.donation-form-container');
 		clearDonationFormValues();	
 	});
 };
 
 const editDonation = () => {
-	$('.contributions-list').on('click', '#edit-donation', function(event) {
+	$('.donations-list').on('click', '#edit-donation', function(event) {
 		event.preventDefault();
 		console.log('editing donation')
 	});
@@ -232,7 +229,7 @@ const editDonation = () => {
 };
 
 const deleteDonation = () => {
-	$('.contributions-list').on('click', '#delete-donation', function(event) {
+	$('.donations-list').on('click', '#delete-donation', function(event) {
 		event.preventDefault();
 		console.log('deleting donation')
 		$(this).parent().parent().parent().parent().remove();

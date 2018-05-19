@@ -24,9 +24,46 @@ span {
 	font-size: 24px;
 }
 
+.row {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.app-name {
+	font-size: 24px;
+}
+
+.nav-items {
+	font-size: 24px;
+}
+
+ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+
 #app-title {
 	margin-top: 0;
 	margin-bottom: 20px;
+}
+
+#home-info {
+	text-align: left;
+}
+
+#nav-user {
+	text-align: right;
 }
 
 /*---------------------Display:None/Block-------------------*/
@@ -42,7 +79,7 @@ span {
 	display: block;
 }
 
-.contributions-container {
+.donations-container {
 	display: none;
 }
 
@@ -50,15 +87,15 @@ span {
 	display: block;
 }
 
-.name-event-container {
+/*.name-event-container {
 	display: block;
 	border: 2px solid black;
 	margin-top: 10px;
 	margin-bottom: 100px;
-}
+}*/
 
-.create-contribution-container {
-	display: none;
+.create-donation-container {
+	display: block;
 }
 /*----------------------------------------------------------*/
 
@@ -86,7 +123,7 @@ span {
 	margin: 10px auto;
 }
 
-.create-contribution-container {
+.create-donation-container {
 	position: fixed;
     left: 0;
     bottom: 0;
@@ -94,14 +131,14 @@ span {
     text-align: center;
 }
 
-.contribution-list-container {
+.donation-list-container {
 	display: block;
 	border: 2px solid black;
 	margin-top: 10px;
 	margin-bottom: 100px;
 }
 
-.contribution-item {
+.donation-item {
 	border: 2px solid black;
 	border-radius: 4px;
 	padding: 12px 2px;
@@ -109,36 +146,36 @@ span {
 	margin: 10px auto;
 }
 
-.contributions-list {
+.donations-list {
 	padding: 2px 2px;
 	margin-top: 2px;
 }
 
-.contribution-details-container {
+.donation-details-container {
 	text-align: left;
 }
 
-.contribution-details-info {
+.donation-details-info {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-.contribution-buttons {
+.donation-buttons {
 	text-align: center;
 }
 
-#create-contribution-icon {
+#create-donation-icon {
 	font-size: 60px;
 }
 
-#delete-contribution-icon {
+#delete-donation-icon {
 	font-size: 30px;
 	margin: 2px 2px;
 	padding: 4px 4px;
 }
 
 /*this controls display for donation form, needs to stay hidden until record donation button is clicked*/
-.contribution-form-container {
+.donation-form-container {
 	display: none;
 	border: 2px solid black;
 	margin-top: 10px;
@@ -223,18 +260,18 @@ footer {
 		width: 90%;
 	}
 
-	#create-contribution-icon {
+	#create-donation-icon {
 		font-size: 50px;
 	}
 
-	.contribution-list-container {
+	.donation-list-container {
 		display: block;
 		border: 2px solid black;
 		margin-top: 10px;
 		margin-bottom: 120px;
 	}
 
-	.contribution-delete {
+	.donation-delete {
 		text-align: center;
 	}
 
