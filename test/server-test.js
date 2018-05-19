@@ -40,7 +40,7 @@ const generateFakeUsers = () => {
 		});
 	};
 
-	console.log(fakeData);
+	// console.log(fakeData);
 
 	return User.insertMany(fakeData);
 };
@@ -50,12 +50,14 @@ const generateFakeDonations = () => {
 
 	for(let i = 0; i < 10; i++) {
 		fakeData.push({
-			userID: faker.random.words(),
+			userId: faker.random.words(),
 			purpose: faker.random.words(),
 			donation: faker.random.number(),
 			date: faker.random.words()
 		});
 	};
+
+	console.log(fakeData);
 
 	return Donation.insertMany(fakeData);
 };
@@ -123,7 +125,7 @@ describe('users endpoint', function() {
 });
 
 // test DONATION routes
-describe('doantions endpoint', function() {
+describe('donations endpoint', function() {
 	before(function() {
 		return runServer(TEST_DB_URL);
 	});
@@ -140,7 +142,7 @@ describe('doantions endpoint', function() {
 		return closeServer();
 	});
 
-	// Test event GET route
+	// Test donations GET route
 	describe('GET route', function() {
 		it('should return all donations created by the user in DB', function() {
 			let res;
@@ -150,7 +152,7 @@ describe('doantions endpoint', function() {
 				.then(_res => {
 					res = _res;
 
-					console.log(res.body);
+					//console.log(res.body);
 					res.should.have.status(200);
 					res.body.should.have.length.of.at.least(1);
 
@@ -166,7 +168,7 @@ describe('doantions endpoint', function() {
 			it('should create a new donation and add to DB', function() {
 				let res;
 				let newTestDonation = {
-					userID: faker.random.words(),
+					userId: faker.random.words(),
 					purpose: faker.random.words(),
 					donation: faker.random.number(),
 					date: faker.random.words()
@@ -179,7 +181,7 @@ describe('doantions endpoint', function() {
 						res = _res;
 						res.should.have.status(201);
 						res.body.should.be.an('object');
-						res.body.should.include.keys('userID', 'purpose', 'donation', 'date', 'id');
+						res.body.should.include.keys('userId', 'purpose', 'donation', 'date', 'id');
 						res.body.id.should.not.be.null;
 				})
 		});
@@ -189,7 +191,7 @@ describe('doantions endpoint', function() {
 		it('should edit the donation by id in the DB', function() {
 			let res;
 			let updateDonation = {
-					userID: '1290343',
+					userId: '1290343',
 					purpose: 'my buddys wedding',
 					donation: faker.random.number(),
 					date: '4/30/2018'

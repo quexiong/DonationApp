@@ -20,10 +20,10 @@ router.get('/', (req, res) => {
 		});
 });
 
-router.get('/:userID', (req, res) => {
-	let userId = req.params.userID;
+router.get('/:userId', (req, res) => {
+	let userId = req.params.userId;
 	Donation
-		.find({userID: userId})
+		.find({userId: userId})
 		.then(donations => {
 			res.json(donations.map(donations => donations.serialize()));
 		})
@@ -42,7 +42,7 @@ router.post('/', (req, res) => {
 
 	Donation
 		.create({
-				userID, //// this is the unique id from event db that we need to attach to every donation so that donations for the event are attached to event
+				userId, 
 				purpose,
 				donation,
 				date

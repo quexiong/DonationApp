@@ -5,8 +5,6 @@ mongoose.Promise = global.Promise;
 
 const donationSchema = new mongoose.Schema({
 	userId: {
-		// this is the unique id from event db that we need to attach to every donation so that donations for 
-		// the event are attached to event
 		type: String,
 		required: true
 	},
