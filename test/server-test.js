@@ -57,7 +57,7 @@ const generateFakeDonations = () => {
 		});
 	};
 
-	return Contribution.insertMany(fakeData);
+	return Donation.insertMany(fakeData);
 };
 
 describe('users endpoint', function() {
@@ -122,7 +122,7 @@ describe('users endpoint', function() {
 	});
 });
 
-// test CONTRIBUTION routes
+// test DONATION routes
 describe('doantions endpoint', function() {
 	before(function() {
 		return runServer(TEST_DB_URL);
@@ -219,7 +219,7 @@ describe('doantions endpoint', function() {
 		it('should delete the donation by id in the DB', function() {
 			let donation;
 
-			return Contribution
+			return Donation
 				.findOne()
 				.then(function (_donation) {
 					donation = _donation;

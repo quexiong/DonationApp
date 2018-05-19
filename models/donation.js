@@ -14,7 +14,7 @@ const donationSchema = new mongoose.Schema({
 	purpose: {
 		type: String,
 		required: false
-	}
+	},
 
 	donation: {
 		type: Number,
@@ -27,7 +27,7 @@ const donationSchema = new mongoose.Schema({
 	}
 });
 
-contributionSchema.methods.serialize = function() {
+donationSchema.methods.serialize = function() {
 	return {
 		id: this._id,
 		userId: this.userId,

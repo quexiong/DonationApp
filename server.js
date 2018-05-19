@@ -23,7 +23,7 @@ app.use(express.static('./public'));
 app.use(bodyParser.json());
 
 app.use('/users', userRouter);
-app.use('/contributions', contributionRouter);
+app.use('/donations', donationRouter);
 app.use('/login', login);
 
 app.use('*', function (req, res) {

@@ -8,7 +8,6 @@ const jsonParser = bodyParser.json();
 
 const { Donation } = require('../models/donation');
 
-// maybe route needs to be /events/:id/contributions - because we are bringing back contributions specific to an event, not ALL contributions in the DB
 router.get('/', (req, res) => {
 	Donation
 		.find()
