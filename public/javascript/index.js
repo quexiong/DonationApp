@@ -46,7 +46,6 @@ const postDonationToDB = (userID, donor, donation, message, contact) => {
 
 //################################### DYNAMIC/RENDER functions ####################################
 const renderDonations = (user_id) => {
-	// console.log('this is the saved value of user id' + userID);
 	$.ajax({
 		url: SUNSHINE_DONATIONS_URL + '/' + user_id,
 		type: 'GET',
