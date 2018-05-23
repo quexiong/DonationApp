@@ -4,10 +4,10 @@ const addDonationToCurrentDonations = (purpose, amount, date, id) => {
 	let template = `<li class="donation-item">
 						<div class="donation-info">
 							<p>Purpose: <span id="purpose">${purpose}</span></p>
-							<p>Amount: <span id="amount">${amount}</span></p>
+							<p>Amount: $<span id="amount">${amount}</span></p>
 							<p>Date: <span id="date">${date}</span></p>
-							<button class="btn edit">Update</button>
-							<button class="btn delete">Delete</button>
+							<button class="btn edit"><i class="fas fa-edit"></i> Update</button>
+							<button class="btn delete"><i class="fas fa-trash-alt"></i> Delete</button>
 							<input type="hidden" id="donationId" value="${id}">
 						</div>
 					</li>`;

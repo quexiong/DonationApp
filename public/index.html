@@ -6,7 +6,8 @@
 	<meta name="description" content="Sunshine Fund is the simple and effective application that allows family and friends to make 'sunshine money/nyiaj tshav ntuj' donations to the family of the deceased to help cover funeral costs.">
 
 	<title>Sunshine Fund</title>
-	
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/grid.css">
 	<link rel="stylesheet" type="text/css" href="./css/one.css">
@@ -14,17 +15,18 @@
 </head>
 
 <body>
+	<img class="background" src="https://i.pinimg.com/originals/76/88/50/768850840c9479ebe65734eef243b71d.jpg">
 	<header role="banner">
 		<section role="region" id="nav-bar-region">
 			<div class="nav-bar-container">
 				<div class="row">
 					<div class="navbar-custom col-6" id="home-info">
-						<span class="app-name"><a href="#">Sunshine Fund</a></span>
+						<span class="app-name">Sunshine Fund</span>
 					</div>
 					<div class="navbar-custom col-6" id="nav-user">
 						<span class="nav-items">Welcome, <span class="user-name"></span></span>
 						<span>|</span>
-						<span class="nav-items" id="logout-button"><i class="fas fa-sign-out-alt"></i><a href="#"> Logout</a></span>
+						<span class="nav-items" id="logout-button"><a href="#"> Logout </a> <i class="fas fa-sign-out-alt"></i></span>
 					</div>
 				</div>
 			</div>
@@ -70,7 +72,7 @@
 							  	</div>
 							  	<div class="submitButton-container">
 							    	<div class="col-sm-12">
-							      		<button type="submit" class="btn btn-primary" id="login-button">Login</button>
+							      		<button type="submit" class="btn btn-primary" id="login-button">Login <i class="fas fa-sign-in-alt"></i></button>
 							    	</div>
 						  		</div>
 							</form>
@@ -140,7 +142,7 @@
 						  	</div>
 						  	<div class="submitButton-container">
 							    <div class="col-sm-12">
-							      	<button type="submit" class="btn btn-primary" id="signup-button">Sign up</button>
+							      	<button type="submit" class="btn btn-primary" id="signup-button">Sign up <i class="fas fa-user-plus"></i></button>
 							    </div>
 						  	</div>
 						</form>
@@ -154,7 +156,7 @@
 			<section role="region" id="cotributions-region">
 				<section role="region" id="donation-display">
 					<div class="donation-list-container col-12">
-						<h2>My Donations <span class="user-event"></span></h2>
+						<h2>My Donations: $<span class="donations-total"></span></h2>
 						<ul class="donations-list">
 						</ul>
 					</div>
@@ -162,7 +164,6 @@
 
 				<section role="region" id="donation-form-display">
 					<div class="donation-form-container col-12">
-						<h2>My Donation</h2>
 						<form class="donation-form">
 							<div class="donor-container">
 								<div class="form-group row">
@@ -237,7 +238,7 @@
 							  	</div>
 						  	</div>
 						  	<div class="event-buttons">
-								<button class="btn" id="edit-add-to-donations-list"><i class="fas fa-plus-square"></i> EDIT DONATION</button>
+								<button class="btn" id="edit-add-to-donations-list"><i class="fas fa-edit"></i> EDIT DONATION</button>
 								<button class="btn" id="edit-cancel-add-donation"><i class="fas fa-times-circle"></i> CANCEL</button>
 							</div>
 						</form>

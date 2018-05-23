@@ -5,6 +5,7 @@ const SUNSHINE_DONATIONS_URL = '/donations';
 
 let username = '';
 let user_id = '';
+let donations_total = 0;
 
 //###################################### AJAX functions ###########################################
 
@@ -16,6 +17,8 @@ const getUserID = (username) => {
 		console.log(user_id); 
 	})
 	.done(function(data) {
+		donations_total = 0;
+		$('.donations-total').empty();
 		renderDonations(user_id); 
 	});
 };
@@ -37,6 +40,8 @@ const postDonationToDB = (userId, purpose, donation, date) => {
 			console.log(data);
 		}
 	})
+	donations_total = 0;
+	$('.donations-total').empty();
 	renderDonations(user_id);
 }
 
@@ -62,7 +67,12 @@ const renderDonations = (user_id) => {
 				purpose = donationsArray[i].purpose,
 				donation = donationsArray[i].donation,
 				date = donationsArray[i].date;
-				console.log(donationId);
+
+			donations_total += donationsArray[i].donation;
+			$('.donations-total').empty();
+			$('.donations-total').append(donations_total);
+			console.log(donations_total);
+
 			$('.donations-list').prepend(addDonationToCurrentDonations(purpose, donation, date, donationId));
 		}
 	})
@@ -256,6 +266,8 @@ const pushEditToDB = (donationId) => {
 			reveal('.donation-list-container');
 			reveal('.create-donation-container');
 			clearDonationFormValues();
+			donations_total = 0;
+			$('.donations-total').empty();
 			renderDonations(user_id);
 		})
 	})
@@ -274,7 +286,9 @@ const deleteDonation = () => {
             type: 'DELETE',
             contentType: 'application/json',
             success: (data) => {
-        	renderDonations(user_id);
+            	donations_total = 0;
+            	$('.donations-total').empty();
+        		renderDonations(user_id);
         	}
     	})
 	})
