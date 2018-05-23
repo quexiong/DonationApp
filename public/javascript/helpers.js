@@ -42,7 +42,6 @@ const clearSignUpForm = () => {
 
 const clearDonationFormValues = () => {
 	$('.form-control').val("");
-	// $('.donation-message-text').val("");
 };
 
 // HELPER FUNCTION-AFTER LOGGING IN, HIDE HOME CONTAINER, DISPLAY EVENTS CONTAINER

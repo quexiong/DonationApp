@@ -1,5 +1,5 @@
 'use strict';
-// API END POINTS
+
 const SUNSHINE_USERS_URL = '/users';
 const SUNSHINE_DONATIONS_URL = '/donations';
 
@@ -7,10 +7,8 @@ let username = '';
 let user_id = '';
 
 //###################################### AJAX functions ###########################################
-// in this function, we req for the specific user that logged in, save the users unique ID to a var
-// when the user logs in, we will call this function
+
 const getUserID = (username) => {
-	// let get_user_id = ''; 
 	let url = SUNSHINE_USERS_URL + '/' + username;
 	$.get(url, function(data) { 
 		user_id = data.id; 
@@ -53,7 +51,6 @@ const renderDonations = (user_id) => {
 		contentType: 'application/json',
 		success: function(data) {
 			console.log('rendering data');
-			// console.log(data);
 		}
 	})
 	.done(function(data) {
@@ -165,7 +162,6 @@ const signUpSubmit = () => {
 // #############################################################################################
 
 const recordDonations = () => {
-	// No need to access server, this function is entirely clientside
 	$('#record-donation-button').on('click', function(event) {
 		event.preventDefault();
 		console.log('going to record donations now');
@@ -183,7 +179,6 @@ const addDonationToList = () => {
 		reveal('.create-donation-container');
 		conceal('.donation-form-container');
 
-		// Capture the values from the form to send to the server
 		let purpose = $('#input-purpose').val(),
 			donationAmount = $('#input-donation-amount').val(),
 			date = $('#input-date').val();
@@ -193,11 +188,6 @@ const addDonationToList = () => {
 		console.log('coming from inside addDonationtoList');
 		console.log(user_id);
 		postDonationToDB(user_id, purpose, donationAmount, date);
-
-		// $('.contributions-list').prepend(addDonationToCurrentDonations(donorName, donationAmount, donationMessage, donorContact));
-		// need to make POST req to server with the info from above so server can create new event
-		// document inside the db, server will respond with relevant info, info will persist upon reload
-		// no more everytime we reload, then events reset to nothing on the clientside
 	});
 };
 
@@ -270,9 +260,6 @@ const pushEditToDB = (donationId) => {
 		})
 	})
 }	
-
-	// need to make request to server to grab the ID of the event, then use id to access the event document
-	// server responds with new event info, save that info/append info to existing event element in the list 
 };
 
 const deleteDonation = () => {
@@ -291,24 +278,15 @@ const deleteDonation = () => {
         	}
     	})
 	})
-
-	// in addition to removing event element from DOM, make req to server with ID of the event
-	// sever will then go into DB and remove the event document inside the DB
 };
 
 // #############################################################################################
 
 const ready = () => {
-	// invoke login/signup functions
 	loginSubmit();
 	signUpSubmit();
-
-	// invoke navigation functions
 	sunshineFundInfo();
 	logout();
-
-	// invoke contribution functions
-	// addEventName();
 	recordDonations();
 	addDonationToList();
 	cancelAddDonation();
