@@ -5,41 +5,41 @@ const SUNSHINE_DONATIONS_URL = '/donations';
 
 let username = '';
 let user_id = '';
-let event_name = '';
 
 //###################################### AJAX functions ###########################################
 // in this function, we req for the specific user that logged in, save the users unique ID to a var
 // when the user logs in, we will call this function
 const getUserID = (username) => {
-	// let get_user_id = '';
+	// let get_user_id = ''; 
 	let url = SUNSHINE_USERS_URL + '/' + username;
-	$.get(url, function(data) {
-		user_id = data.id;
-		console.log('this is from getUserID2');
-		console.log(get_user_id);
+	$.get(url, function(data) { 
+		user_id = data.id; 
+		console.log('this is from getUserID');
+		console.log(user_id); 
+	})
+	.done(function(data) {
+		renderDonations(user_id); 
 	});
 };
 
-const postDonationToDB = (userID, donor, donation, message, contact) => {
+const postDonationToDB = (userId, purpose, donation, date) => {
 	$.ajax({
 		url: SUNSHINE_DONATIONS_URL,
 		type: 'POST',
 		dataType: 'json',
 		contentType: 'application/json',
 		data: JSON.stringify({
-			userID: userID,
-			donor: donor,
+			userId: userId,
+			purpose: purpose,
 			donation: donation,
-			message: message,
-			contact: contact
+			date: date 
 		}),
 		success: function(data) {
 			console.log('donation made');
 			console.log(data);
-			getUserID(username);
 		}
 	})
-	renderDonations(userID);
+	renderDonations(user_id);
 }
 
 //#################################################################################################
@@ -53,7 +53,20 @@ const renderDonations = (user_id) => {
 		contentType: 'application/json',
 		success: function(data) {
 			console.log('rendering data');
-			console.log(data);
+			// console.log(data);
+		}
+	})
+	.done(function(data) {
+		console.log(data);
+		clearContent('.donations-list');
+		let donationsArray = data;
+		for(let i = 0; i < donationsArray.length; i++){
+			let donationId = donationsArray[i].id,
+				purpose = donationsArray[i].purpose,
+				donation = donationsArray[i].donation,
+				date = donationsArray[i].date;
+				console.log(donationId);
+			$('.donations-list').prepend(addDonationToCurrentDonations(purpose, donation, date, donationId));
 		}
 	})
 };
@@ -77,19 +90,16 @@ const loginSubmit = () => {
 				dataType: 'json',
 				contentType: 'application/json; charset=utf-8',
 				data: JSON.stringify({
-					username: username,
-					password: password
-				}),
-				success: function(data) {
-					localStorage.setItem("authToken", data.authToken);
-					hideHome();
-					console.log('logging in');
-					
-				},
-				error: function(error) {
-					alert(error);
-				}
-			});
+					username: username, 
+					password: password 
+				})
+			})
+			.done(function (data) {
+				localStorage.setItem("authToken", data.authToken); 
+				hideHome(); 
+				console.log('logging in and saving user id'); 
+				getUserID(username);
+			})
 		};
 		
 		login(username, userPassword);
@@ -144,29 +154,15 @@ const signUpSubmit = () => {
 						}
 						alert('Successfully created an account, please log in');
 						window.location.href = "index.html";
-					}
-				});
-			};
-		};
+					} 
+				}); 
+			}; 
+		}; 
 		createNewUser(input_firstName, input_lastName, input_username, input_password);
-	});
-};
+	}); 
+}; 
 // #############################################################################################
 
-
-// ########################handles DONATION functions###################################
-const addEventName = () => {
-	$('#add-to-event').on('click', function(event) {
-		event.preventDefault();
-		console.log('adding name');
-		conceal('.name-event-container');
-		reveal('.create-donation-container');
-		let eventName = $('#input-event-name').val();
-		console.log(eventName);
-		$('.user-event').append('<h2>' + eventName + '</h2');
-
-	});
-}
 const recordDonations = () => {
 	// No need to access server, this function is entirely clientside
 	$('#record-donation-button').on('click', function(event) {
@@ -187,17 +183,15 @@ const addDonationToList = () => {
 		conceal('.donation-form-container');
 
 		// Capture the values from the form to send to the server
-		let donorName = $('#input-donor').val(),
+		let purpose = $('#input-purpose').val(),
 			donationAmount = $('#input-donation-amount').val(),
-			donationMessage = $('#input-donation-message').val(),
-			donorContact = $('#input-contact-info').val();
+			date = $('#input-date').val();
 
 		clearDonationFormValues();
-		
-		
+				
 		console.log('coming from inside addDonationtoList');
 		console.log(user_id);
-		postContributionToDB(user_id, donorName, donationAmount, donationMessage, donorContact);
+		postDonationToDB(user_id, purpose, donationAmount, date);
 
 		// $('.contributions-list').prepend(addDonationToCurrentDonations(donorName, donationAmount, donationMessage, donorContact));
 		// need to make POST req to server with the info from above so server can create new event
@@ -228,11 +222,22 @@ const editDonation = () => {
 };
 
 const deleteDonation = () => {
-	$('.donations-list').on('click', '#delete-donation', function(event) {
+	$('.donations-list').on('click', '.delete', function(event) {
 		event.preventDefault();
-		console.log('deleting donation')
-		$(this).parent().parent().parent().parent().remove();
-	});
+		console.log('deleting donation');
+		// $(this).parent().parent().parent().parent().remove();
+		let donationId = $(this).siblings("input[type='hidden']").val();
+		console.log(donationId);
+    	$.ajax({
+            url: SUNSHINE_DONATIONS_URL + '/' + donationId,
+            dataType: 'json',
+            type: 'DELETE',
+            contentType: 'application/json',
+            success: (data) => {
+        	renderDonations(user_id);
+        	}
+    	})
+	})
 
 	// in addition to removing event element from DOM, make req to server with ID of the event
 	// sever will then go into DB and remove the event document inside the DB
@@ -250,7 +255,7 @@ const ready = () => {
 	logout();
 
 	// invoke contribution functions
-	addEventName();
+	// addEventName();
 	recordDonations();
 	addDonationToList();
 	cancelAddDonation();

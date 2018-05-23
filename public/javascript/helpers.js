@@ -1,22 +1,16 @@
 'use strict';
 
-const addDonationToCurrentDonations = (name, amount, message, contact) => {
-	let template = '<li class="donation-item">' +
-						'<div class="row">' +
-							'<div class="donation-details-container col-12">' +
-								'<div class="donation-details-info">' +
-									'<div>Donor Name: ' + name +  '</div>' +
-									'<div>Donation Amount: ' + amount + '</div>' +
-									'<div>Message: ' + message + '</div>' +
-									'<div>Contact: ' + contact + '</div>' +
-								'</div>' +
-								'<div class="donation-buttons">' +
-								'<button class="btn" id="edit-donation"><i class="fas fa-edit" id="edit-donation-icon"></i> EDIT</button>' +
-								'<button class="btn" id="delete-donation"><i class="fa fa-trash" id="#delete-donation-icon"></i> DELETE</button>' +
-								'</div>' +
-							'</div>' +
-						'</div>' +
-					'</li>';
+const addDonationToCurrentDonations = (purpose, amount, date, id) => {
+	let template = `<li class="donation-item">
+						<div>
+							<p>Purpose: ${purpose}</p>
+							<p>Purpose: ${amount}</p>
+							<p>Purpose: ${date}</p>
+							<button class="btn edit">Update</button>
+							<button class="btn delete">Delete</button>
+							<input type="hidden" id="entryId" value="${id}">
+						</div>
+					</li>`;
 	return template;
 };
 

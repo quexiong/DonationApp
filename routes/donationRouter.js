@@ -31,7 +31,7 @@ router.get('/:userId', (req, res) => {
 			console.error(err);
 			res.status(500).json({error: 'an error occurred'});
 		});
-})
+});
 
 router.post('/', (req, res) => {
 	let 

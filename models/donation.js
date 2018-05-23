@@ -11,7 +11,7 @@ const donationSchema = new mongoose.Schema({
 
 	purpose: {
 		type: String,
-		required: false
+		required: true
 	},
 
 	donation: {
@@ -21,7 +21,7 @@ const donationSchema = new mongoose.Schema({
 
 	date: {
 		type: String,
-		required: false
+		required: true
 	}
 });
 
