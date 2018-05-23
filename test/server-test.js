@@ -40,8 +40,6 @@ const generateFakeUsers = () => {
 		});
 	};
 
-	// console.log(fakeData);
-
 	return User.insertMany(fakeData);
 };
 
@@ -151,8 +149,6 @@ describe('donations endpoint', function() {
 				.get('/donations')
 				.then(_res => {
 					res = _res;
-
-					//console.log(res.body);
 					res.should.have.status(200);
 					res.body.should.have.length.of.at.least(1);
 

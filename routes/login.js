@@ -53,7 +53,6 @@ router.post('/', jsonParser, (req, res) => {
 		});
 });
 
-
 passport.use(jwtStrategy);
 const jwtAuth = passport.authenticate('jwt', {session: false});
 

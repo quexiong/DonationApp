@@ -2,7 +2,7 @@
 
 const addDonationToCurrentDonations = (purpose, amount, date, id) => {
 	let template = `<li class="donation-item">
-						<div>
+						<div class="donation-info">
 							<p>Purpose: <span id="purpose">${purpose}</span></p>
 							<p>Amount: <span id="amount">${amount}</span></p>
 							<p>Date: <span id="date">${date}</span></p>

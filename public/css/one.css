@@ -36,6 +36,15 @@ ul {
 	list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: stretch; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+li {
+	float: left;
 }
 
 a {
@@ -134,7 +143,7 @@ a:hover {
 	border: 2px solid black;
 	border-radius: 4px;
 	padding: 12px 2px;
-	width: 80%;
+	width: 40%;
 	margin: 10px auto;
 }
 
@@ -189,6 +198,12 @@ a:hover {
 
 .hidden-id {
 	display: none;
+}
+
+.donation-info {
+	width: 80%;
+	margin: 10px auto;
+	text-align: center;
 }
 /*-----------------------------------------------------------*/
 
