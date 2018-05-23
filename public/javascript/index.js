@@ -103,6 +103,7 @@ const loginSubmit = () => {
 		};
 		
 		login(username, userPassword);
+		$('.user-name').append(username);
 	});
 };
 
