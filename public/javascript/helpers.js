@@ -3,12 +3,12 @@
 const addDonationToCurrentDonations = (purpose, amount, date, id) => {
 	let template = `<li class="donation-item">
 						<div>
-							<p>Purpose: ${purpose}</p>
-							<p>Purpose: ${amount}</p>
-							<p>Purpose: ${date}</p>
+							<p>Purpose: <span id="purpose">${purpose}</span></p>
+							<p>Amount: <span id="amount">${amount}</span></p>
+							<p>Date: <span id="date">${date}</span></p>
 							<button class="btn edit">Update</button>
 							<button class="btn delete">Delete</button>
-							<input type="hidden" id="entryId" value="${id}">
+							<input type="hidden" id="donationId" value="${id}">
 						</div>
 					</li>`;
 	return template;
@@ -42,7 +42,7 @@ const clearSignUpForm = () => {
 
 const clearDonationFormValues = () => {
 	$('.form-control').val("");
-	$('.donation-message-text').val("");
+	// $('.donation-message-text').val("");
 };
 
 // HELPER FUNCTION-AFTER LOGGING IN, HIDE HOME CONTAINER, DISPLAY EVENTS CONTAINER

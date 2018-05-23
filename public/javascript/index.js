@@ -211,11 +211,64 @@ const cancelAddDonation = () => {
 	});
 };
 
-const editDonation = () => {
-	$('.donations-list').on('click', '#edit-donation', function(event) {
+const cancelEditDonation = () => {
+	$('#edit-cancel-add-donation').on('click', function(event) {
 		event.preventDefault();
-		console.log('editing donation')
+		console.log('canceling edit and returning to donation list page');
+		reveal('.donation-list-container');
+		reveal('.create-donation-container');
+		conceal('.edit-donation-form-container');
+		clearDonationFormValues();	
 	});
+};
+
+const editDonation = () => {
+	$('.donations-list').on('click', '.edit', function(event) {
+		event.preventDefault();
+		console.log('editing donation');
+		let donationId = $(this).siblings("input[type='hidden']").val();
+		console.log(donationId);
+		conceal('.donation-list-container');
+		conceal('.create-donation-container');
+		reveal('.edit-donation-form-container');
+
+		let editPurpose = $('#edit-input-purpose').val(),
+			editDonationAmount = $('#edit-input-donation-amount').val(),
+			editDate = $('#edit-input-date').val();
+
+		pushEditToDB(donationId);
+});
+
+const pushEditToDB = (donationId) => {
+	$('#edit-add-to-donations-list').on('click', function(event) {
+		event.preventDefault();
+
+		let editPurpose = $('#edit-input-purpose').val(),
+			editDonationAmount = $('#edit-input-donation-amount').val(),
+			editDate = $('#edit-input-date').val();
+
+		$.ajax({
+			url: SUNSHINE_DONATIONS_URL + '/' + donationId,
+			dataType: 'json',
+			type: 'PUT',
+			contentType: 'application/json',
+			data: JSON.stringify({
+					id: donationId,
+					purpose: editPurpose,
+					donation: editDonationAmount,
+					date: editDate
+				})
+		})
+		.done(function(data) {
+			console.log(data);
+			conceal('.edit-donation-form-container');
+			reveal('.donation-list-container');
+			reveal('.create-donation-container');
+			clearDonationFormValues();
+			renderDonations(user_id);
+		})
+	})
+}	
 
 	// need to make request to server to grab the ID of the event, then use id to access the event document
 	// server responds with new event info, save that info/append info to existing event element in the list 
@@ -225,7 +278,6 @@ const deleteDonation = () => {
 	$('.donations-list').on('click', '.delete', function(event) {
 		event.preventDefault();
 		console.log('deleting donation');
-		// $(this).parent().parent().parent().parent().remove();
 		let donationId = $(this).siblings("input[type='hidden']").val();
 		console.log(donationId);
     	$.ajax({
@@ -259,6 +311,7 @@ const ready = () => {
 	recordDonations();
 	addDonationToList();
 	cancelAddDonation();
+	cancelEditDonation();
 	editDonation();
 	deleteDonation();
 };

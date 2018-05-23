@@ -19,10 +19,10 @@ main {
 	min-height: 90%;
 	margin-bottom: -10px;
 }
-
+/*
 span {
 	font-size: 24px;
-}
+}*/
 
 .row {
 	padding-right: 0;
@@ -87,12 +87,9 @@ a:hover {
 	display: block;
 }
 
-/*.name-event-container {
-	display: block;
-	border: 2px solid black;
-	margin-top: 10px;
-	margin-bottom: 100px;
-}*/
+.edit-donation-form-container {
+	display: none;
+}
 
 .create-donation-container {
 	display: block;
