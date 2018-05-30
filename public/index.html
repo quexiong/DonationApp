@@ -8,7 +8,7 @@
 	<title>Sunshine Bank</title>
 	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/grid.css">
 	<link rel="stylesheet" type="text/css" href="./css/one.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -16,7 +16,7 @@
 
 <body>
 	<header role="banner">
-		<section role="region" id="nav-bar-region">
+		<!-- <section role="region" id="nav-bar-region">
 			<div class="nav-bar-container">
 				<div class="row">
 					<div class="navbar-custom col-6" id="home-info">
@@ -34,7 +34,27 @@
 			<div class="home-banner-container">
 				<h1 id="app-title">Sunshine Bank</h1>
 			</div>
-		</section>
+		</section> -->
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	    	<a class="navbar-brand" href="#">Sunshine Bank</a>
+	      	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+	        	<span class="navbar-toggler-icon"></span>
+	      	</button>
+
+		    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		        <ul class="navbar-nav mr-auto">
+		          	<li class="nav-item active">
+		            	<a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+		          	</li>
+		          	<li class="nav-item">
+		            	<a class="nav-link" href="#">My Donations </a>
+		          	</li>
+		          	<li class="nav-item">
+		            	<a class="nav-link disabled" href="#">Disabled</a>
+		          	</li>
+		        </ul>
+		    </div>
+    	</nav>
 	</header>
 
 	<main role="main">
