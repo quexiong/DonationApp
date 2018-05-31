@@ -71,3 +71,9 @@ const logout = () => {
 	});
 };
 
+const addLogOut = () => {
+	const template = `<li class="nav-item active">
+		            	<a class="nav-link" href="./main.html">Logout</a> 
+		          	  </li>`
+	return template;
+}

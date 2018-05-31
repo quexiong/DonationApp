@@ -13,7 +13,6 @@ const getUserID = (username) => {
 	let url = SUNSHINE_USERS_URL + '/' + username;
 	$.get(url, function(data) { 
 		user_id = data.id; 
-		console.log('this is from getUserID');
 		console.log(user_id); 
 	})
 	.done(function(data) {
@@ -62,15 +61,24 @@ const renderDonations = (user_id) => {
 		console.log(data);
 		clearContent('.donations-list');
 		let donationsArray = data;
+		let largestDonation = 0;
 		for(let i = 0; i < donationsArray.length; i++){
 			let donationId = donationsArray[i].id,
 				purpose = donationsArray[i].purpose,
 				donation = donationsArray[i].donation,
 				date = donationsArray[i].date;
 
+			if(donationsArray[i].donation >= largestDonation) {
+				largestDonation = donationsArray[i].donation;
+			}
+
 			donations_total += donationsArray[i].donation;
 			$('.donations-total').empty();
+			$('.donations-made').empty();
+			$('.large-donation-made').empty();
 			$('.donations-total').append(donations_total);
+			$('.donations-made').append(donationsArray.length);
+			$('.large-donation-made').append(largestDonation);
 			console.log(donations_total);
 
 			$('.donations-list').prepend(addDonationToCurrentDonations(purpose, donation, date, donationId));
@@ -110,7 +118,8 @@ const loginSubmit = () => {
 		};
 		
 		login(username, userPassword);
-		$('.user-name').append(username);
+		$('.user').append(username);
+		$('.navbar-nav').append(addLogOut());
 	});
 };
 
@@ -161,7 +170,7 @@ const signUpSubmit = () => {
 							console.log(data);
 						}
 						alert('Successfully created an account, please log in');
-						window.location.href = "index.html";
+						window.location.href = "main.html";
 					} 
 				}); 
 			}; 

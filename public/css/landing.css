@@ -9,9 +9,9 @@
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #343a40!important;
-    border-color: #343a40!important;
+    background: #212627d6;
+    color: #f8ffff;
+    border-color: #212627d6;
 }
 
 body {
@@ -22,7 +22,6 @@ body {
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-	
 }
 
 html {

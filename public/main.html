@@ -17,7 +17,7 @@
 <body>
 	<header role="banner">
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-	    	<a class="navbar-brand" href="./landing.html">Sunshine Bank</a>
+	    	<a class="navbar-brand" href="./index.html">Sunshine Bank</a>
 	      	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 	        	<span class="navbar-toggler-icon"></span>
 	      	</button>
@@ -25,14 +25,11 @@
 		    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
 		        <ul class="navbar-nav mr-auto">
 		          	<li class="nav-item active">
-		            	<a class="nav-link" href="./index.html">About <span class="sr-only">(current)</span></a>
+		            	<a class="nav-link" href="./about.html">About <span class="sr-only">(current)</span></a>
 		          	</li>
 		          	<li class="nav-item active">
 	            		<a class="nav-link" href="https://github.com/quexiong/DonationApp" target="_blank">Github Repo <span class="sr-only">(current)</span></a>
 	          		</li>
-		          	<li class="nav-item active">
-		            	<a class="nav-link" href="./main.html">Logout</a> 
-		          	</li>
 		        </ul>
 		    </div>
     	</nav>
@@ -42,9 +39,8 @@
 		<div class="home-container">
 			<section role="region" id="login-region">
 				<div class="login-container row">
-					<div class="col-3"><p class="test"> </p></div>
 					<div>
-						<div class="login-form-container col-6">
+						<div class="login-form-container">
 							<div id="login-instructions">
 								<h4>Welcome back, login to your account!</h4> 
 							</div>
@@ -70,7 +66,7 @@
 								    	</div>
 								  	</div>
 							  	</div>
-							  	<div><p>sample account: demo | password: password</p></div>
+							  	<div><p class="sample">sample account: demo | password: password</p></div>
 							  	<div class="submitButton-container">
 							    	<div class="col-sm-12">
 							      		<button type="submit" class="btn btn-primary" id="login-button">Login <i class="fas fa-sign-in-alt"></i></button>
@@ -79,13 +75,11 @@
 							</form>
 						</div>	
 					</div>
-					<div class="col-3"><p class="test"> </p></div>
 				</div>
 			</section>
 			<section role="region" id="signup-region">
 				<div class="sign-up-container row">
-					<div class="col-3"><p class="test"> </p></div>
-					<div class="sign-up-form-container col-6">
+					<div class="sign-up-form-container">
 						<div id="signUp-instructions">
 							<h4>Don't have an account? Create a new one here!</h4> 
 						</div>
@@ -148,7 +142,6 @@
 						  	</div>
 						</form>
 					</div>
-					<div class="col-3"><p class="test"> </p></div>
 				</div>
 			</section>
 		</div>
@@ -157,7 +150,14 @@
 			<section role="region" id="cotributions-region">
 				<section role="region" id="donation-display">
 					<div class="donation-list-container col-12">
-						<h2>My Donations: $<span class="donations-total"></span></h2>
+						<div class="donation-stats">
+							<h2><span class="user"></span>'s Donation Statistics</h2>
+							
+								<div class="total-money">Total Money Donated: $<span class="donations-total"></span></div>
+								<div class="total-donations">Number Of Donations Made: <span class="donations-made"></span></div>
+								<div class="largest-donation">Largest Donation Made: <span class="large-donation-made"></span></div>
+							
+						</div>
 						<ul class="donations-list">
 						</ul>
 					</div>
@@ -165,8 +165,8 @@
 
 				<section role="region" id="donation-form-display">
 					<div class="donation-form-container col-12">
-						<h2>Add New Donation</h2>
 						<form class="donation-form">
+							<h2>Add New Donation</h2>
 							<div class="donor-container">
 								<div class="form-group row">
 							    	<label for="donor" class="col-sm-12 col-form-label">Purpose</label>
@@ -207,8 +207,8 @@
 
 				<section role="region" id="donation-form-display">
 					<div class="edit-donation-form-container col-12">
-						<h2>Edit Donation</h2>
 						<form class="donation-form">
+							<h2>Edit Donation</h2>
 							<div class="donor-container">
 								<div class="form-group row">
 							    	<label for="donor" class="col-sm-12 col-form-label">Purpose</label>
@@ -260,29 +260,7 @@
 		</div>
 	</main>
 
-	<div class="footer-container">
-		<section role="region" id="creatorinfo">
-			<footer role="contentinfo">
-	        	<div class="row">
-	          		<div class="copyright col-4">
-	            		<p>Xiong Projects © 2018</p>
-	          		</div>
-	          		<div class="connectMe col-4">
-	            		<a target="_blank" href="https://www.linkedin.com/in/quentinxiong/">
-	              		<img class="connect" src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-256.png" alt="LinkedIn logo">
-	            		</a> 
-	            		<a target="_blank" href="https://github.com/quexiong">
-	              		<img class="connect" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-256.png" alt="GitHub logo">
-	            		</a> 
-	          		</div>
-	          		<div class="creator col-4">
-	            		<p>Created by Quentin Xiong</p>
-	          		</div>
-	        	</div>
-	      	</footer>
-	    </section>
-	</div>
-
+	<script type="text/javascript" src="./javascript/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./javascript/helpers.js"></script>
 	<script type="text/javascript" src="./javascript/index.js"></script>
 </body>
