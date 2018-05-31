@@ -12,7 +12,7 @@ For Hmong-Americans (https://en.wikipedia.org/wiki/Hmong_Americans), an essentia
 
 - Once signed in, you will see all your current donations and some simple donation statistics.
 
-![Donations](public/images/dashboard.png)
+![Donations](public/images/donations.png)
 
 - Record any donations you have made by clicking on the record donation button and filling out the form with the appropriate information.
 
@@ -20,7 +20,7 @@ For Hmong-Americans (https://en.wikipedia.org/wiki/Hmong_Americans), an essentia
 
 - If you need to edit an existing donation, just click the edit button on the donation you wish to edit and update the relevant fields.
 
-![Edit Donation](public/images/edit.png)
+![Edit Donation](public/images/edits.png)
 
 - The about page contains information about why I created the app.
 
