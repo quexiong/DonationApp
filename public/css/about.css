@@ -1,0 +1,21 @@
+body {
+	background-image: url(https://hdwallsource.com/img/2014/5/coins-wallpaper-hd-44251-45366-hd-wallpapers.jpg);
+	font-family: 'Libre Baskerville', serif;
+}
+
+.sunshine-info {
+	width: 80%;
+	margin-top: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #343a40cf;
+    color: #f8ffff;
+    border-radius: 4px;
+}
+
+.info {
+	margin: 10px 10px;
+	padding: 20px 20px;
+	font-size: 1.25rem;
+    font-weight: 300;
+}

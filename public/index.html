@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<meta name="description" content="Sunshine Bank is an application that allows you to record and maintain a log of your donations made to the 'sunshine funds' of your family/friends/community>
+	<meta name="description" content="Sunshine Bank is an application that allows you to record and maintain a log of your donations made to the 'sunshine funds' of your family/friends/community">
 
 	<title>Sunshine Bank</title>
 	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
@@ -16,27 +16,8 @@
 
 <body>
 	<header role="banner">
-		<!-- <section role="region" id="nav-bar-region">
-			<div class="nav-bar-container">
-				<div class="row">
-					<div class="navbar-custom col-6" id="home-info">
-						<span class="app-name">Sunshine Bank</span>
-					</div>
-					<div class="navbar-custom col-6" id="nav-user">
-						<span class="nav-items">Welcome, <span class="user-name"></span></span>
-						<span>|</span>
-						<span class="nav-items" id="logout-button"><a href="#"> Logout </a> <i class="fas fa-sign-out-alt"></i></span>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section role="region" id="applicationTitle">
-			<div class="home-banner-container">
-				<h1 id="app-title">Sunshine Bank</h1>
-			</div>
-		</section> -->
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-	    	<a class="navbar-brand" href="#">Sunshine Bank</a>
+	    	<a class="navbar-brand" href="./landing.html">Sunshine Bank</a>
 	      	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 	        	<span class="navbar-toggler-icon"></span>
 	      	</button>
@@ -44,13 +25,13 @@
 		    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
 		        <ul class="navbar-nav mr-auto">
 		          	<li class="nav-item active">
-		            	<a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+		            	<a class="nav-link" href="./about.html">About <span class="sr-only">(current)</span></a>
 		          	</li>
-		          	<li class="nav-item">
-		            	<a class="nav-link" href="#">My Donations </a>
-		          	</li>
-		          	<li class="nav-item">
-		            	<a class="nav-link disabled" href="#">Disabled</a>
+		          	<li class="nav-item active">
+	            		<a class="nav-link" href="https://github.com/quexiong/DonationApp" target="_blank">Github Repo <span class="sr-only">(current)</span></a>
+	          		</li>
+		          	<li class="nav-item active">
+		            	<a class="nav-link" href="./index.html">Logout</a> 
 		          	</li>
 		        </ul>
 		    </div>
@@ -60,13 +41,13 @@
 	<main role="main">
 		<div class="home-container">
 			<section role="region" id="login-region">
-				<div id="login-instructions">
-					<h4>Welcome back, login to your account!</h4> 
-				</div>
 				<div class="login-container row">
 					<div class="col-3"><p class="test"> </p></div>
 					<div>
 						<div class="login-form-container col-6">
+							<div id="login-instructions">
+								<h4>Welcome back, login to your account!</h4> 
+							</div>
 							<form class="login-form">
 								<div class="login-error-container"></div>
 								<div class="username-container">
@@ -102,12 +83,12 @@
 				</div>
 			</section>
 			<section role="region" id="signup-region">
-				<div id="signUp-instructions">
-					<h4>Don't have an account yet? Create a new account for free!</h4> 
-				</div>
 				<div class="sign-up-container row">
 					<div class="col-3"><p class="test"> </p></div>
 					<div class="sign-up-form-container col-6">
+						<div id="signUp-instructions">
+							<h4>Don't have an account? Create a new one here!</h4> 
+						</div>
 						<form class="signup-form">
 							<div class="signup-error-container"></div>
 							<div class="firstName-container">

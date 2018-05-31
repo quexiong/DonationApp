@@ -7,7 +7,9 @@ body {
 	height: 100%;
 	text-align: center;
 	font-family: 'Libre Baskerville', serif;
-	color: #313638;
+	/*color: #313638;*/
+	background-color: #fff179f7;
+	background-image: url(https://i1.wp.com/www.foreverwallpapers.com/wp-content/uploads/2018/04/currency-wallpaper.jpg?fit=1900%2C1200&ssl=1);
 }
 
 header {
@@ -116,6 +118,8 @@ a:hover {
 	margin-bottom: 10px;
 	border-radius: 4px;
 	padding: 12px 12px;
+	background-color: #343a40cf;
+    color: white;
 }
 
 .login-container{
@@ -229,8 +233,11 @@ a:hover {
   	background: transparent;
   	border: 2px solid black;
   	color: black;
-    background-color: #FEFEFF;
-    border-color: #313638;
+    /*background-color: #FEFEFF;*/
+    /*border-color: #313638;*/
+    color: #fff;
+    background-color: #343a40!important;
+    border-color: #343a40!important;
 }
 
 .btn-create, #add-to-event {

@@ -1,0 +1,32 @@
+.jumbotron {
+	background-color: #343a40cf;
+	width: 80%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px;
+    color: #f8ffff;
+}
+
+.lead {
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #343a40!important;
+    border-color: #343a40!important;
+}
+
+body {
+	background-color: #fff179f7;
+	height: 100%;
+	font-family: 'Libre Baskerville', serif;
+	color: #313638;
+	background-image: url(https://f.ptcdn.info/445/047/000/oh4xahkl1s9oezCqiJ4-o.jpg);
+}
+
+html {
+	height: 100%;
+	margin: 0;
+}
+
