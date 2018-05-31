@@ -236,15 +236,23 @@ a:hover {
 	cursor: pointer;
 }
 
-.donation-stats {
+.donation-stats, .donations {
 	width: 100%;
 	margin: 10px auto 10px auto;
     color: #f8ffff;
-    background: #343a40cf;
+    background: #000000c7;
     color: #f8ffff;
     border: 2px solid black;
     border-radius: 4px;
     padding: 12px 2px;
+}
+
+#donation-header {
+	margin: 10px 10px;
+}
+
+hr {
+	border-top: 6px solid #ffffff9c;
 }
 
 .total-money, .total-donations, .largest-donation {
