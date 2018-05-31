@@ -1,5 +1,7 @@
 body {
 	background-image: url(https://hdwallsource.com/img/2014/5/coins-wallpaper-hd-44251-45366-hd-wallpapers.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
 	font-family: 'Libre Baskerville', serif;
 }
 

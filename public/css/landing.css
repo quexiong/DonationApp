@@ -8,9 +8,6 @@
     color: #f8ffff;
 }
 
-.lead {
-}
-
 .btn-primary {
     color: #fff;
     background-color: #343a40!important;
@@ -18,11 +15,14 @@
 }
 
 body {
-	background-color: #fff179f7;
 	height: 100%;
 	font-family: 'Libre Baskerville', serif;
 	color: #313638;
-	background-image: url(https://f.ptcdn.info/445/047/000/oh4xahkl1s9oezCqiJ4-o.jpg);
+	background-image: url(https://www.wallpaperflare.com/static/267/679/723/chocolate-coins-five-fence-gold-coins-wallpaper.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+	
 }
 
 html {
